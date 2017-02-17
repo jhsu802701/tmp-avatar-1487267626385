@@ -60,6 +60,9 @@ class User < ApplicationRecord
                        format: { with: VALID_USERNAME_REGEX },
                        uniqueness: { case_sensitive: false }
 
+  # Allows the file uploading process to fill in the picture parameter
+  mount_uploader :picture, PictureUploader
+
   private
 
   # Converts email to all lower-case.
