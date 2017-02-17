@@ -25,6 +25,7 @@
 #  last_name              :string
 #  first_name             :string
 #  username               :string
+#  picture                :string
 #
 
 require 'test_helper'
