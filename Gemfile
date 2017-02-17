@@ -136,3 +136,8 @@ gem 'bootstrap-will_paginate', '0.0.10' # Twitter Bootstrap for pagination
 gem 'will_paginate', '3.1.5' # For pagination
 
 gem 'ransack', '1.8.2' # For searching users
+
+# BEGIN: for user profile pictures
+gem 'carrierwave' # For uploading files
+gem 'mini_magick' # For resizing images
+# END: for user profile pictures
