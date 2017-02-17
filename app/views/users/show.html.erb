@@ -10,6 +10,12 @@
     <br>
     Email: <%= raw(EmailMunger.encode(@user.email)) %>
     <br>
+    <br>
+    <% if @user.picture? %>
+      <%= image_tag @user.picture.url %>
+    <% end %>
+    <br>
+    <br>
     <% if admin_signed_in? %>
       <%= link_to "Delete #{@user.first_name} #{@user.last_name} (#{@user.username})", @user,
         class: "btn btn-primary", method: :delete,
