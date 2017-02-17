@@ -25,6 +25,7 @@
 #  last_name              :string
 #  first_name             :string
 #  username               :string
+#  picture                :string
 #
 
 #
@@ -58,6 +59,9 @@ class User < ApplicationRecord
   validates :username, presence: true, length: { maximum: 255 },
                        format: { with: VALID_USERNAME_REGEX },
                        uniqueness: { case_sensitive: false }
+
+  # Allows the file uploading process to fill in the picture parameter
+  mount_uploader :picture, PictureUploader
 
   private
 

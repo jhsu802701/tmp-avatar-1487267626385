@@ -55,26 +55,27 @@ User.create!(last_name: 'Arroway', first_name: 'Ellie',
 
 puts "Users: #{User.count}/101"
 
-50.times do |n|
+10.times do |n|
   name_l = Faker::Name.last_name
   name_f = Faker::Name.first_name
-  email_address = "user-#{n + 1}@rubyonracetracks.com"
+  email_address = "user#{n + 1}@rubyonracetracks.com"
 
   User.create!(last_name: name_l, first_name: name_f,
-               username: "user#{n + 1}", email: email_address,
+               username: "user-pic-#{n + 1}", email: email_address,
                password: 'Daytona 500',
                password_confirmation: 'Daytona 500',
+               remote_picture_url: Faker::Company.logo,
                confirmed_at: Time.now)
-  print  " #{User.count} " if (User.count % 10).zero?
+  print " #{User.count} "
 end
 
-50.times do |n|
+90.times do |n|
   name_l = Faker::Name.last_name
   name_f = Faker::Name.first_name
-  email_address = Faker::Internet.email(name_f)
+  email_address = "user-faker-#{n + 1}@rubyonracetracks.com"
 
   User.create!(last_name: name_l, first_name: name_f,
-               username: "user-faker#{n + 1}", email: email_address,
+               username: "user-nopic-#{n + 1}", email: email_address,
                password: 'Daytona 500',
                password_confirmation: 'Daytona 500',
                confirmed_at: Time.now)
